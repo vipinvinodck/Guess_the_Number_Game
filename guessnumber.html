@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var count=0;
+        var b=Math.floor(Math.random()*100);
+        function num(){
+            
+            count++;
+            if(count<5){
+                var a= document.getElementById("guess").value;
+                
+               
+                console.log(a)
+                console.log(b)
+                
+                if(a==b){
+                    document.getElementById("p").innerHTML="CONGRATSSSSS";
+                }
+                 else if(a>b){
+                    document.getElementById("p").innerHTML="Hehe!!!! Try a Lesser Number";
+                }
+                else if(a<b){
+                document.getElementById("p").innerHTML="Hehe!!!! Try a Greater Number";
+                document.getElementById("guess").value=""
+            }
+            }
+            else{
+                document.getElementById("p").innerHTML="Hehe... Sorryyyy " + b +"  was the Number.....";
+                
+            }
+        }
+        function reset(){
+            location.reload();
+        }
+    </script>
+    <style>
+      
+    </style>
+</head>
+<body  style="background-image:url(https://i.pinimg.com/736x/d5/5d/27/d55d271e3414206b4d89a65bd59faba1.jpg) ; background-repeat: no-repeat;background-size: cover;" >
+    <div class="row">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+        <p style=" padding-left: 1000px; padding-top: 300px; font-size: xx-large;">"I'm thinking a Number between 0 & 100.... Can you guess it!!!!!!!!! "<br> <span style="font-size:large ; margin-left: 120px;"> You have 5 Chances.. </span></p>
+        <input style=" MARGIN-left: 1050px; width: 300px;height: 50px;" type="text" id="guess" placeholder="Your Guess"><br><br>
+        <button  style="MARGIN-left: 1160px; width: 70px; height: 40px; border-radius: 20%; background-color: green;" onclick="num()">play</button><br>
+        <p  style="MARGIN-left: 1050px;  font-size: x-large;" id="p"></p>
+        <button  style="MARGIN-left: 1160px; width: 70px; height: 40px; border-radius: 10%; background-color: red;" onclick="reset()">Reset</button><br>
+        </div>
+    </div>
+</html>
